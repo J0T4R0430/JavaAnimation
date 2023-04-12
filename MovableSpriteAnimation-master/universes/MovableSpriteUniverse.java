@@ -22,7 +22,7 @@ public class MovableSpriteUniverse implements Universe {
 	this.setXCenter(0);
 	this.setYCenter(0);
 
-	player1 = new YHDSprite(0,0);
+	player1 = new tankbodySprite(0,0);
 	sprites.add(player1);
 
 	MovableSprite movable = (MovableSprite)player1;
@@ -73,36 +73,10 @@ public class MovableSpriteUniverse implements Universe {
 	}		
 	
 	public void update(KeyboardInput keyboard, long actual_delta_time) {
-
-//		double velocityX = 0;
-//		double velocityY = 0;
-//		
-//		//LEFT	
-//		if (keyboard.keyDown(37)) {
-//			velocityX -= VELOCITY;
-//		}
-//		//UP
-//		if (keyboard.keyDown(38)) {
-//			velocityY -= VELOCITY;			
-//		}
-//		// RIGHT
-//		if (keyboard.keyDown(39)) {
-//			velocityX += VELOCITY;
-//		}
-//		// DOWN
-//		if (keyboard.keyDown(40)) {
-//			velocityY += VELOCITY;			
-//		}
 	
 		
 		for (int i = 0; i < sprites.size(); i++) {
 			DisplayableSprite sprite = sprites.get(i);
-			
-//    		if (sprite instanceof MovableSprite) {
-//    			MovableSprite movable = (MovableSprite)sprite;
-//    			movable.setVelocityX(velocityX);
-//    			movable.setVelocityY(velocityY);
-//    		}
 			
 			sprite.update(this, keyboard, actual_delta_time);
     	}    	
